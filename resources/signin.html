@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- meta data -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!--font-family-->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&amp;subset=devanagari,latin-ext"
+          rel="stylesheet">
+
+    <!-- title of site -->
+    <title>Sign in</title>
+
+    <!-- For favicon png -->
+    <link rel="shortcut icon" type="image/icon" href="assets/logo/favicon.png"/>
+
+    <!--font-awesome.min.css-->
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+
+    <!--animate.css-->
+    <link rel="stylesheet" href="assets/css/animate.css">
+
+    <!--bootstrap.min.css-->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+    <!-- bootsnav -->
+    <link rel="stylesheet" href="assets/css/bootsnav.css">
+
+    <!--style.css-->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!--responsive.css-->
+    <link rel="stylesheet" href="assets/css/responsive.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+<!--[if lte IE 9]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade
+    your browser</a> to improve your experience and security.</p>
+<![endif]-->
+
+<!-- signin end -->
+<section class="signin">
+    <div class="container">
+
+        <div class="sign-content">
+            <h2>sign in</h2>
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="signin-form">
+                        <form action="signin.html">
+                            <div class="form-group">
+                                <label for="signin_form_email">Email</label>
+                                <input type="email" class="form-control" id="signin_form_email"
+                                       placeholder="enter your email here">
+                                <div class="alert alert-danger" id="email_alert" style="display: none"></div>
+
+                            </div><!--/.form-group -->
+                            <div class="form-group">
+                                <label for="signin_form_psw">password</label>
+                                <input type="password" class="form-control" id="signin_form_psw" placeholder="Password">
+                            </div><!--/.form-group -->
+                        </form><!--/form -->
+                    </div><!--/.signin-form -->
+
+                </div><!--/.col -->
+            </div><!--/.row -->
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="signin-password">
+                        <div class="awesome-checkbox-list">
+                            <ul class="unstyled centered">
+
+                                <li>
+                                    <input class="styled-checkbox" id="styled-checkbox-2" type="checkbox"
+                                           value="value2">
+                                    <label for="styled-checkbox-2">remember password</label>
+                                </li>
+
+                                <li>
+                                    <a href="#">Forgot email or password ?</a>
+                                </li>
+
+                            </ul>
+                        </div><!--/.awesome-checkbox-list -->
+                    </div><!--/.signin-password -->
+                </div><!--/.col -->
+            </div><!--/.row -->
+
+            <div class="alert alert-danger" id="request_result_alert" style="display: none"></div>
+
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="signin-footer">
+                        <button type="button" class="btn signin_btn" onclick="submit()">
+                            sign in
+                        </button>
+                        <p>
+                            Don’t have an Account ?
+                            <a href="signup.html">register</a>
+                        </p>
+                    </div><!--/.signin-footer -->
+                </div><!--/.col-->
+            </div><!--/.row -->
+
+        </div><!--/.sign-content -->
+
+    </div><!--/.container -->
+
+</section><!--/.signin -->
+
+<!-- signin end -->
+
+<!--footer copyright start -->
+<footer class="footer-copyright">
+    <div id="scroll-Top">
+        <i class="fa fa-angle-double-up return-to-top" id="scroll-top" data-toggle="tooltip" data-placement="top"
+           title="" data-original-title="Back to Top" aria-hidden="true"></i>
+    </div><!--/.scroll-Top-->
+
+</footer><!--/.hm-footer-copyright-->
+<!--footer copyright  end -->
+
+
+<!-- Include all js compiled plugins (below), or include individual files as needed -->
+
+<script src="assets/js/jquery.js"></script>
+
+<!--modernizr.min.js-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+
+<!--bootstrap.min.js-->
+<script src="assets/js/bootstrap.min.js"></script>
+
+<!-- bootsnav js -->
+<script src="assets/js/bootsnav.js"></script>
+
+<!-- jquery.sticky.js -->
+<script src="assets/js/jquery.sticky.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+
+
+<!--Custom JS-->
+<script src="assets/js/custom.js"></script>
+
+<script src="js/config.js"></script>
+<script>
+
+
+    var psw_input = document.getElementById("signin_form_psw");
+    var email_input = document.getElementById("signin_form_email");
+    var email_alert = document.getElementById("email_alert");
+    var request_result_alert = document.getElementById("request_result_alert");
+
+    function getCookie(cname) {
+        var name = cname + "=";
+        var ca = document.cookie.split(';');
+        for (var i = 0; i < ca.length; i++) {
+            var c = ca[i].trim();
+            if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
+        }
+        return "";
+    }
+
+    function setCookie(cname, cvalue, exhour) {
+        var d = new Date();
+        d.setTime(d.getTime() + (exhour * 60 * 60 * 1000));
+        var expires = "expires=" + d.toGMTString();
+        document.cookie = cname + "=" + cvalue + "; " + expires;
+    }
+
+
+    window.onload = function () {
+        //alert('11');
+    }
+
+
+    function ischeckemail() {
+        var email = email_input.value;
+        if (email !== "") {
+            var reg = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/;
+            //调用正则验证test()函数
+            isok = reg.test(email);
+            if (!isok) {
+                //alert("邮箱格式不正确，请重新输入！");
+                email_alert.innerText = "邮箱格式不正确，请重新输入！";
+                email_alert.style.display = "block";
+                email_input.focus();
+                return false;
+            } else {
+                return true;
+            }
+        }
+    }
+
+    function submit() {
+        request_result_alert.style.display = "none";
+        email_alert.style.display = "none";
+        var psw = psw_input.value.trim();
+        var email = email_input.value.trim();
+
+        if (email.trim() === "") {
+            //alert(email_alert.innerText)
+            email_alert.innerText = "邮箱不能为空";
+            email_alert.style.display = "block";
+            return;
+        }
+
+        if (!ischeckemail())
+            return;
+
+        if(psw==="")
+        {
+            request_result_alert.setAttribute('class', "alert alert-danger");
+            request_result_alert.innerText = "还未输入密码";
+            request_result_alert.style.display = "block";
+            return;
+        }
+
+        $.ajax({
+            url: ip + ":9006/2",
+            type: "POST",
+            dataType: 'json',
+            data: {'user': email, 'passwd': psw, 'vcode': "111111"},
+
+            success: function (res) {
+                if (res['success'] === true) {
+                    request_result_alert.setAttribute('class', "alert alert-success");
+                    request_result_alert.innerText = "登录成功";
+                    request_result_alert.style.display = "block";
+                    setCookie('user',email,1);
+                    window.location.href="my.html";
+
+                } else {
+                    request_result_alert.setAttribute('class', "alert alert-danger");
+                    request_result_alert.innerText = "登录失败：" + res['msg'];
+                    request_result_alert.style.display = "block";
+                }
+            }
+        })
+    }
+</script>
+
+</body>
+
+</html>

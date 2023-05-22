@@ -1,0 +1,406 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Befold - Minimal Portfolio Template</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <!-- Place favicon.ico in the root directory --><!-- CSS here -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="css/meanmenu.css">
+    <link rel="stylesheet" href="css/themify-icons.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/default.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <style>
+        .entity {
+            font-weight: bold;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .type {
+            display: block;
+            font-size: 12px;
+        }
+
+        .border-row-td {
+            border-bottom: solid 1px black !important;
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+
+        .border-row-tr {
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+
+        .border-col-td {
+            border-right: solid 1px black !important;
+        }
+
+        .tp {
+            background-color: #c9eec1;
+        }
+
+        .fp {
+            background-color: #e7ecfc;
+        }
+
+        .fn {
+            background-color: #ffd5cb;
+        }
+
+        .tp-box {
+            float: left;
+            background-color: #c9eec1;
+            border: solid 1px black;
+            width: 20px;
+            height: 20px;
+        }
+
+        .fp-box {
+            float: left;
+            background-color: #e7ecfc;
+            border: solid 1px black;
+            width: 20px;
+            height: 20px;
+        }
+
+        .fn-box {
+            float: left;
+            background-color: #ffd5cb;
+            border: solid 1px black;
+            width: 20px;
+            height: 20px;
+        }
+
+        .doc-perfect {
+            color: #03e06f;
+            vertical-align: middle;
+        }
+
+        .doc-good {
+            color: #e0ca4f;
+            vertical-align: middle;
+        }
+
+        .doc-bad {
+            color: #ff2942;
+            vertical-align: middle;
+        }
+
+        .vertical-center {
+            display: flex;
+            align-items: center;
+        }
+
+        .doc {
+            margin-bottom: 10px;
+        }
+
+        .doc-text {
+            white-space: normal;
+        }
+
+    </style>
+
+</head>
+<body>
+<!--[if lte IE 9]><p class="browserupgrade">You are using an <strong>outdated</strong>browser. Please <a
+        href="https://browsehappy.com/">upgrade your browser</a>to improve your experience and security.</p><![endif]-->
+<header><!-- header-top-area-start -->
+    <div class="header-top-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-3 col-lg-3">
+                    <div class="logo"><a href="index.html"><img src="img/logo/logo.png" alt=""/></a></div>
+                </div>
+                <div class="col-xl-9 col-lg-9">
+                    <div class="main-menu text-right">
+                        <nav id="mobile-menu">
+                            <ul>
+                                <li class="active"><a href="my.html">首页</a>
+                                    <ul class="sub-menu text-left">
+                                        <li><a href="my.html">Chinese NER</a></li>
+                                        <li><a href="index-2.html">English NER</a></li>
+                                    </ul>
+                                </li>
+                                <li class="active"><a href="index.html">home </a>
+                                    <ul class="sub-menu text-left">
+                                        <li><a href="index.html">home 1</a></li>
+                                        <li><a href="index-2.html">home 2</a></li>
+                                        <li><a href="index-3.html">home 3</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="about.html">about</a></li>
+                                <li><a href="portfolio-3-col.html">portfolio</a>
+                                    <ul class="sub-menu text-left">
+                                        <li><a href="portfolio-3-col.html">portfolio 3 col</a></li>
+                                        <li><a href="portfolio-3-col-masonry.html">portfolio 3 col masonry</a></li>
+                                        <li><a href="portfolio-4-col.html">portfolio 4 col</a></li>
+                                        <li><a href="portfolio-4-col-masonry.html">portfolio 4 col masonry</a></li>
+                                        <li><a href="portfolio-details.html">portfolio details</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="blog-default.html">blog </a>
+                                    <ul class="sub-menu text-left">
+                                        <li><a href="blog-default.html">blog default</a></li>
+                                        <li><a href="blog-details.html">blog details</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="contact.html">contact</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="mobile-menu"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- header-top-area-end --></header>
+<!-- slider-area-start -->
+<div class="slider-area">
+    <div class="slider-wrapper pt-135 pb-140">
+        <div class="container">
+            <div class="col-xl-8">
+                <div class="slider-content">
+                    <h3><span>嵌套实体命名识别</span></h3>
+                    <p>利用深度学习模型提供识别文本中的命名实体的功能，识别的实体种类包括7个类别：人（PER）、位置（LOC）、交通工具（VEH）、
+                        地理/社会/政治实体（GPE）、武器（WEA）、组织（ORG）、设施（FAC）。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- slider-area-end --><!-- portfolio-area start -->
+<div class="portfolio-area  pt-95 pb-100">
+    <div class="container" id="main_container">
+        <div class="col-xl-12">
+            <textarea name="input_text" id="input_text" cols="140" rows="10"
+                      placeholder="please input your text"></textarea>
+        </div>
+        <div class="portfolio-btn mt-20 text-center"><a class="btn" onclick="extract_btn_Click()"
+        >extraction</a></div>
+        <div id="result_area">
+
+
+        </div>
+    </div>
+</div>
+<!-- portfolio-area end --><!-- footer-area-start -->
+<!--
+<footer>
+  <div class="footer-area gray-bg pt-60 pb-40">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-5 col-lg-5 col-md-5 mb-20">
+          <div class="footer-icon"><a href="#"><span class="ti-twitter"></span></a><a href="#"><span class="ti-vimeo"></span></a><a href="#"><span class="ti-dribbble"></span></a><a href="#"><span class="ti-instagram"></span></a></div>
+        </div>
+        <div class="col-xl-7 col-lg-7 col-md-7 mb-20">
+          <div class="copyright text-md-right">
+            <p>Copyright &copy; 2021.Company name All rights reserved.<a target="_blank" href="https://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+-->
+<!-- footer-area-end -->
+<!-- JS here -->
+
+
+<script>
+
+    const result_text_template_str =
+        "            <div class=\"card doc\">\n" +
+        "            <div class=\"collapsed\" data-toggle=\"collapse\"\n" +
+        "                 data-target=\"#collapse-0\" style=\"cursor: pointer;\">\n" +
+        "                <div class=\"card-header\" id=\"heading-0\">\n" +
+        "                    <div class=\"row vertical-center\">\n" +
+        "                        <div class=\"col-1 vertical-center\">\n" +
+        "                            (0) &nbsp;\n" +
+        "                        </div>\n" +
+        "                        <div class=\"col\">\n" +
+        "                            <div class=\"doc-text\">\n" +
+        "                                <b>  </b>\n" +
+        "                            </div>\n" +
+        "                            <div class=\"row\">\n" +
+        "                                <div class=\"col-sm\">\n" +
+        "                                    total entities: 0\n" +
+        "                                </div>\n" +
+        "                                <div class=\"col-sm\">\n" +
+        "                                    nested: 0\n" +
+        "                                </div>\n" +
+        "                            </div>\n" +
+        "                        </div>\n" +
+        "                    </div>\n" +
+        "                </div>\n" +
+        "            </div>\n" +
+        "            </div>\n"
+    const result_entity_template_str =
+        "            <div id=\"collapse-0\" class=\"collapse\" data-parent=\"#accordion\">\n" +
+        "                <div class=\"card-body\">\n" +
+        "                    <table class=\"table table-bordered\">\n" +
+        "                        <thead>\n" +
+        "                        <tr>\n" +
+        "                            <th>Score</th>\n" +
+        "                            <th>Text</th>\n" +
+        "                        </tr>\n" +
+        "                        </thead>\n" +
+        "                        <tbody>\n" +
+        "                        </tbody>\n" +
+        "                    </table>\n" +
+        "                </div>\n" +
+        "            </div>\n"
+
+    const main_container = document.getElementById("main_container");
+    const result_area = document.getElementById("result_area");
+    const split_characters = new Set(['。', '？', '！', '?', '!']);
+
+    window.onload = function () {
+
+        //document.getElementById("result").style.display = "none";
+    }
+
+    function split_sentences(text) {
+        var sentences = [];
+        var last_idx = 0;
+        for (let i = 0; i < text.length; i++) {
+            if (split_characters.has(text[i])) {
+                let tstring = text.substring(last_idx, i + 1).trim();
+                if(tstring.trim()!=='')
+                    sentences.push(tstring);
+                last_idx = i + 1;
+            }
+        }
+        if (last_idx < text.length)
+        {
+            let tstring = text.substring(last_idx, text.length).trim();
+            if(tstring.trim()!=='')
+                sentences.push(tstring);
+        }
+        return sentences;
+    }
+
+    function isOverlay(region_1, region_2) {
+        if (region_1[0] <= region_2[0] && region_2[0] < region_1[1] || region_1[0] < region_2[1] && region_2[1] <= region_1[1])
+            return true;
+        if (region_2[0] <= region_1[0] && region_1[0] < region_2[1] || region_2[0] < region_1[1] && region_1[1] <= region_2[1])
+            return true;
+        return false;
+
+    }
+
+    getFloat = function (num, n) {
+        n = n ? parseInt(n) : 0;
+        if (n <= 0) {
+            return Math.round(num);
+        }
+        num = Math.round(num * Math.pow(10, n)) / Math.pow(10, n); //四舍五入
+        num = Number(num).toFixed(n); //补足位数
+        return num;
+    };
+
+
+    function extract_btn_Click() {
+
+        //document.getElementById("result").style.display = "inline";
+
+        var input_text = $("#input_text").val();
+
+        if (input_text.length === 0)
+            return;
+        result_area.innerHTML = ""
+
+        var sentences = split_sentences(input_text);
+        for (let idx = 0; idx < sentences.length; idx++) {
+            var result_node = document.createElement('div');
+            result_node.setAttribute("class", "card_doc");
+            result_node.innerHTML = result_text_template_str + result_entity_template_str;
+            result_node.getElementsByClassName("doc-text")[0].innerHTML = "<b>" + sentences[idx] + "</b>";
+            result_node.getElementsByClassName("col-1 vertical-center")[0].innerHTML = "(" + idx + ")&nbsp";
+            result_node.getElementsByClassName('collapse')[0].setAttribute('id', 'collapse-' + idx);
+            result_node.getElementsByClassName('collapsed')[0].setAttribute('data-target', '#collapse-' + idx);
+            result_node.getElementsByClassName("card-header")[0].setAttribute('id', 'heading-' + idx);
+            result_area.appendChild(result_node);
+        }
+        //通过ajax去后台请求数据
+        for (let idx = 0; idx < sentences.length; idx++) {
+            let sentence = sentences[idx];
+            console.log(sentence)
+            $.ajax({
+                url: "http://192.168.70.128:1316/predict",
+                type: "POST",
+                dataType: 'json',
+                data: {'text': sentence},
+
+                success: function (data) {
+                    console.log(data);
+                    //if (data.success) {
+                    var card_header = document.getElementById('heading-' + idx)
+                    var tbody = document.getElementById('collapse-' + idx).getElementsByTagName("tbody")[0]
+                    var nested_count = 0;
+                    for (var i = 0; i < data.length; i++) {
+                        for (let j = 0; j < data.length; j++) {
+                            if (j === i)
+                                continue;
+                            if (isOverlay([data[i][0], data[i][1]], [data[j][0], data[j][1]])) {
+                                nested_count++;
+                                break;
+                            }
+                        }
+                        var entity_raw = "<tr class='tp'> <td>" + getFloat(data[i][3], 4) + "</td>" +
+                            "<td>" + sentence.substring(0, data[i][0]) +
+                            "<span class='entity'><span class='type'>" + data[i][2] + "</span>" + sentence.substring(data[i][0], data[i][1]) + "</span>" +
+                            sentence.substring(data[i][1]) +
+                            "</tr>";
+                        tbody.innerHTML += entity_raw;
+                    }
+
+                    var col_sm =  card_header.getElementsByClassName("col-sm")
+                    col_sm[0].innerHTML = "total entities:" + data.length;
+                    col_sm[1].innerHTML = "nested:" + nested_count;
+
+                    //添加表格底部横线
+                    tbody.innerHTML += "<tr class='border-row-tr'> <td class='border-row-td'></td> <td class='border-row-td'></td> </tr>";
+
+                }
+            })
+        }
+
+
+    }
+
+</script>
+
+
+<script src="js/vendor/modernizr-3.5.0.min.js"></script>
+<script src="js/vendor/modernizr-3.5.0.min.js"></script>
+<script src="js/vendor/jquery-1.12.4.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/isotope.pkgd.min.js"></script>
+<script src="js/jquery.magnific-popup.min.js"></script>
+<script src="js/slick.min.js"></script>
+<script src="js/jquery.meanmenu.min.js"></script>
+<script src="js/ajax-form.js"></script>
+<script src="js/wow.min.js"></script>
+<script src="js/jquery.scrollUp.min.js"></script>
+<script src="js/imagesloaded.pkgd.min.js"></script>
+<script src="js/jquery.magnific-popup.min.js"></script>
+<script src="js/plugins.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

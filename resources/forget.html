@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="">
+
+<head>
+    <!-- meta data -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!--font-family-->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&amp;subset=devanagari,latin-ext"
+          rel="stylesheet">
+
+    <!-- title of site -->
+    <title>Sign up</title>
+
+    <!-- For favicon png -->
+    <link rel="shortcut icon" type="image/icon" href="assets/logo/favicon.png"/>
+
+    <!--font-awesome.min.css-->
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+
+    <!--animate.css-->
+    <link rel="stylesheet" href="assets/css/animate.css">
+
+    <!--bootstrap.min.css-->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+    <!-- bootsnav -->
+    <link rel="stylesheet" href="assets/css/bootsnav.css">
+
+    <!--style.css-->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!--responsive.css-->
+    <link rel="stylesheet" href="assets/css/responsive.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+<!--[if lte IE 9]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade
+    your browser</a> to improve your experience and security.</p>
+<![endif]-->
+
+<!-- signin end -->
+<section class="signin signup">
+    <div class="container">
+
+        <div class="sign-content">
+            <h2>重置密码</h2>
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="signin-form">
+                        <form>
+
+                                <div class="form-group" id="email-group">
+                                    <label for="forget_form_email">邮箱</label>
+                                    <input type="email" class="form-control" id="forget_form_email"
+                                           placeholder="enter your email here">
+									<div class="alert alert-danger" id="email_alert" style="display: none" ></div>
+                                </div><!--/.form-group -->
+
+                                <div class="form-group">
+                                    <label for="form_vercode">邮箱验证码</label>
+                                    <input type="password" class="form-control" id="form_vercode"
+                                           placeholder="Password">
+                                </div><!--/.form-group -->
+                                <div class="form-group">
+                                    <div type="button" class="btn btn-block btn-primary" id="send" onclick="send_btn_click()">发送验证码
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label for="new_form_psw">新密码</label>
+                                    <input type="password" class="form-control" id="new_form_psw"
+                                           placeholder="Password">
+                                </div><!--/.form-group -->
+                                <div class="form-group">
+                                    <label for="new_form_rpsw">重复新密码</label>
+                                    <input type="password" class="form-control" id="new_form_rpsw"
+                                           placeholder="Retype Password">
+									<div class="alert alert-danger" id="psw_alert" style="display: none" ></div>
+                                </div><!--/.form-group -->
+                        </form><!--/form -->
+                    </div><!--/.signin-form -->
+                </div><!--/.col -->
+            </div><!--/.row -->
+
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="signin-footer">
+                        <button type="button" class="btn signin_btn"  onclick="submit()">
+                            重置
+                        </button>
+                    </div><!--/.signin-footer -->
+                </div><!--/.col-->
+            </div><!--/.row -->
+
+        </div><!--/.sign-content -->
+
+
+    </div><!--/.container -->
+
+
+</section><!--/.signin -->
+
+<!-- signin end -->
+
+<!--footer copyright start -->
+<footer class="footer-copyright">
+    <div id="scroll-Top">
+        <i class="fa fa-angle-double-up return-to-top" id="scroll-top" data-toggle="tooltip" data-placement="top"
+           title="" data-original-title="Back to Top" aria-hidden="true"></i>
+    </div><!--/.scroll-Top-->
+
+</footer><!--/.hm-footer-copyright-->
+<!--footer copyright  end -->
+
+
+<!-- Include all js compiled plugins (below), or include individual files as needed -->
+
+<script src="assets/js/jquery.js"></script>
+
+<!--modernizr.min.js-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+
+<!--bootstrap.min.js-->
+<script src="assets/js/bootstrap.min.js"></script>
+
+<!-- bootsnav js -->
+<script src="assets/js/bootsnav.js"></script>
+
+<!-- jquery.sticky.js -->
+<script src="assets/js/jquery.sticky.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+
+
+<!--Custom JS-->
+<script src="assets/js/custom.js"></script>
+
+<script src="js/config.js"></script>
+
+<script>
+
+    var send_btn = document.getElementById("send");
+    var email_input = document.getElementById("forget_form_email");
+    var wait_time = 60;
+    var email_alert = document.getElementById("email_alert");
+    var psw_alert = document.getElementById("psw_alert");
+
+    var interval;
+
+
+    function clock() {
+        wait_time--;
+        send_btn.innerText = wait_time.toString() + "s";
+        if (wait_time === 0) {
+            window.clearInterval(interval);
+            send_btn.innerText = "发送验证码";
+            send_btn.setAttribute("class", "btn btn-block btn-primary");
+            send_btn.disabled = false;
+            wait_time = 60;
+
+        }
+    }
+
+
+    function send_btn_click() {
+        var email = email_input.value;
+        email_alert.style.display = "none" ;
+        if (email.trim() === "") {
+        	//alert(email_alert.innerText)
+			email_alert.innerText="邮箱不能为空";
+			email_alert.style.display = "block" ;
+
+            return;
+        }
+
+        if (!ischeckemail())
+            return;
+        send_btn.setAttribute("class", "btn btn-block btn-secondary");
+        send_btn.setAttribute("disabled", "false");
+        interval = self.setInterval("clock()", 1000);
+
+
+    }
+
+     window.onload = function ()
+	{
+		//alert('11');
+	}
+
+
+    function ischeckemail() {
+        var email = email_input.value;
+        if (email !== "") {
+            var reg = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/;
+            //调用正则验证test()函数
+            isok = reg.test(email);
+            if (!isok) {
+                //alert("邮箱格式不正确，请重新输入！");
+				email_alert.innerText = "邮箱格式不正确，请重新输入！";
+				email_alert.style.display = "block";
+                email_input.focus();
+                return false;
+            } else {
+                return true;
+            }
+        }
+    }
+
+    function submit()
+	{
+		psw_alert.style.display = "none";
+		var psw = document.getElementById("new_form_psw").value;
+		var rpsw = document.getElementById("new_form_rpsw").value;
+		if(psw.trim()==="")
+		{
+			psw_alert.innerText = "请输入新密码";
+			psw_alert.style.display = "block";
+		}
+		if(psw!==rpsw)
+		{
+			psw_alert.innerText = "两次密码输入不一致，请重新输入！";
+			psw_alert.style.display = "block";
+			rpsw.focus();
+			return;
+		}
+	}
+
+
+
+
+</script>
+
+
+</script>
+
+</body>
+
+</html>
